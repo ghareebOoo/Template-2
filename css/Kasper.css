@@ -1,0 +1,1042 @@
+:root{
+    --main-color: #19c8fa;
+    --transparent-color:rgb(15 116 143 / 70%);
+    --secondary-color: #777;
+    --section-padding: 100px;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+ul{
+    list-style: none;
+}
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+header{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    z-index: 2;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+header .container::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    bottom: 0px;
+    background-color: var(--secondary-color);
+}
+header .container .image img{
+    height: 40px;
+}
+header .container nav{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+header .container nav .toggle-menu{
+    color: white;
+    font-size: 22px;
+}
+header .container nav ul{
+    display: flex;
+    margin-right: 15px;
+}
+header .container nav ul li a{
+    text-decoration: none;
+    padding: 40px 10px;
+    display: block;
+    color: white;
+    font-size: 15px;
+    transition: 0.5s;
+    position: relative;
+    z-index: 2;
+}
+header .container nav ul li a.active,
+header .container nav ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+header .container .form{
+    margin-left: 20px;
+    border-left: 1px solid white;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    position: relative;
+}
+header .container .form i{
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    font-size: 20px;
+    transform: translatey(-50%);
+    color: white;
+}
+.sectionOne{
+    background-image: url(../imgs/landing.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+.sectionOne .text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    padding: 50px;
+    width: 50%;
+    color: white;
+}    
+.sectionOne .text .content{
+    margin-left: 30px;
+}
+.sectionOne .text .content h1{
+    font-size: 20px;
+    line-height: 2;
+}
+.sectionOne .text .content p{
+    font-size: 14px;
+}
+.sectionOne i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sectionOne .fa-angle-left{
+    left: 30px;
+} 
+.sectionOne .fa-angle-right{
+    right: 30px;
+} 
+.sectionOne .bullets{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.sectionOne .bullets li{
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.sectionOne .bullets:hover li{
+    transform: translate(-10px)
+}
+.sectionOne .bullets .active{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+.sectionOne .bullets li:not(.active):hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+.sectionTwo{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sectionTwo .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}  
+.shape{
+    text-align: center;
+    padding: 30px;
+}
+.shape .sh{
+    position: relative;
+    font-size: 50px;
+    font-weight: 300
+}
+.shape .sh::before{
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 2px;
+    background-color: black;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.shape .sh::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: -45px;
+    left: 50%;
+    border: 2px solid black;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+.shape:hover .sh::after{
+    background-color: var(--main-color);
+}
+.shape p{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: var(--secondary-color);
+    line-height: 2;
+}
+.Services{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px , 1fr));
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+}
+.Services .box{
+    display: flex;
+    gap: 30px;
+}
+.Services .box h3{
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+.Services .box p{
+    line-height: 2;
+}
+.sectionThree{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url(../imgs/design-features.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.sectionThree .image{
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+}
+.sectionThree .image img{
+    position: relative;
+    bottom: -120px;
+}
+.sectionThree .text{
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 30px;
+}
+.sectionThree .text h2{
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 400;
+}
+.sectionThree .text ul li{
+    padding-bottom: 30px;
+}
+.sectionThree .text ul li::before {
+    content: "\f108";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 20px;
+    position: relative;
+    top: 1px;
+}
+.sectionFour{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sectionFour .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.sectionFour .container ul{
+    display: flex;
+    justify-content: center;
+}
+.sectionFour .container ul .active{
+    background-color: var(--main-color);
+    color: white;
+}
+.sectionFour .container ul li{
+   padding: 10px;
+}
+.sectionFour .images{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sectionFour .images .box{
+    position: relative;
+    overflow: hidden;
+}
+.sectionFour .images .box img{
+    max-width: 100%;
+    transition: 0.5s;
+}
+.sectionFour .images .box .caption{
+    background-color: white;
+    padding: 20px;
+    position: absolute;
+    bottom: -100%;
+    transition: 0.5s;
+    left: 0%;
+    width: 100%;
+}
+.sectionFour .images .box .caption h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.sectionFour .images .box .caption p{
+    color: var(--main-color);
+}
+.sectionFour .images .box img:hover{
+    transform: rotate(3deg) scale(1.1) ;
+}
+.sectionFour .images .box:hover .caption{
+    bottom: 0;
+} 
+.sectionFour a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    margin: 30px auto;
+    width: fit-content;
+    padding: 20px;
+}
+.sectionFive{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.Video{
+    position: relative;
+}
+.Video video{
+    width: 100%;
+}
+.sectionFive .text{
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    text-align: center;
+    width: 100%;
+    background-color: var(--transparent-color);
+    padding: 13px;
+    color: white;
+}
+.sectionFive .text h3{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.sectionFive .text p{
+    margin-bottom: 20px;
+}
+.sectionFive .text button{
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.sectionFive .text button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+.sectionSix{
+    padding-top: 50px;
+    overflow: hidden;
+}
+.sectionSix .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.sectionSix .image{
+    text-align: center;
+}
+.sectionSix .image img{
+    position: relative;
+    bottom: -120px;
+    max-width: 100%;
+}
+.sectionSeven{
+    background-image: url(../imgs/stats.png);
+    background-size: cover;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.sectionSeven .container{
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+}
+.sectionSeven .container .box{
+    color: white;
+    background-color: var(--transparent-color);
+    padding: 40px;
+}
+.sectionSeven .container .box i{
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sectionSeven .container .box div{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.sectionSeven .container .box p{
+    font-size: 15px;
+    font-weight: bold
+}
+.sectionSeven .container .box i:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.sectionEight{
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+.sectionEight .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sectionEight .container .left h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sectionEight .container .left p{
+    font-size: 15px;
+    color: var(--secondary-color);
+    line-height: 2;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sectionEight .container .left .nickName{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.sectionEight .container .left .nickName .image img{
+    position: relative;
+    width: 100px;
+    border-radius: 50%;
+}
+.sectionEight .container .left .nickName .text{
+    margin-top: 15px;
+    line-height: 2;
+    margin-left: 30px;
+    border-bottom: 1px solid #CCC;
+}
+.sectionEight .container .left .nickName .text h3{
+    text-align: right;
+    color: var(--secondary-color);
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+.sectionEight .bullets{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.sectionEight .bullets li{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.sectionEight .bullets:hover li{
+    transform: translate(-10px)
+}
+.sectionEight .bullets .active{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+.sectionEight .bullets li:not(.active):hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+.sectionEight .container .right h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sectionEight .container .right p{
+    font-size: 15px;
+    color: var(--secondary-color);
+    line-height: 2;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sectionEight .container .right .progress{
+    margin-bottom: 40px;
+}
+.sectionEight .container .right .progress h3{
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 20px;
+}
+.sectionEight .container .right .progress .prog{
+    background-color: #dedadc;
+    height: 30px;
+}
+.sectionEight .container .right .progress .prog span{
+    position: relative;
+    display: block;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.sectionEight .container .right .progress .prog span::before{
+    content: attr(data-progress);
+    position: absolute;
+    width: 40px;
+    background-color: black;
+    top: -45px;
+    right: -25px;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    border-radius: 5px;
+}
+.sectionEight .container .right .progress .prog span::after{
+    content: "";
+    position: absolute;
+    border-color: black transparent transparent transparent;
+    top: -15px;
+    right: -7px;
+    border-style: solid;
+    border-width: 8px;
+}
+.sectionNine{
+   background-image: url(../imgs/quote.jpg);
+   padding-top: 50px;
+   padding-bottom: 50px;
+   background-size: cover;
+   position: relative;
+   height: 40vh;
+}
+.sectionNine .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+.sectionNine .container p{
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.sectionNine .container h2{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+}
+.sectionTen{
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+.sectionTen .container{
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.sectionTen .container .plans{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+}
+.sectionTen .container .plans .plan{
+    padding: 50px;
+    text-align: center;
+}
+.sectionTen .container .plans .plan .information h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    border-top: 1px solid var(--main-color);
+    padding-top: 30px;
+}
+.sectionTen .container .plans .plan .information span{
+    display: block;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.sectionTen .container .plans .plan .information span::before{
+    content: "$";
+    position: relative;
+    font-size: 25px;
+    font-weight: 400;
+    top: -40px;
+    left: -20px;
+}
+.sectionTen .container .plans .plan .information span::after{
+   content: "/Mo";
+   position: relative;
+   font-size: 25px;
+   right: -20px;
+}
+.sectionTen .container .plans .plan ul{
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+.sectionTen .container .plans .plan ul li{
+    margin-bottom: 30px;
+    margin-top: 20px;
+    position: relative;
+}
+.sectionTen .container .plans .plan ul li:not(:last-child)::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 120px;
+    left: 50%;
+    background-color: var(--main-color);
+    transform: translatex(-50%);
+    bottom: -10px;
+}
+.sectionTen .container .plans .plan .btn a{
+    text-decoration: none;
+    display: block;
+    margin: 30px auto;
+    border: 1px solid var(--main-color);
+    height: 50px;
+    width: fit-content;
+    padding: 15px 30px;
+    color: black;
+    transition: 0.5s;
+}
+.sectionTen .container .plans .plan .btn a:hover{
+    background-color: var(--transparent-color);
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+}
+.sectionTen h3{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.sectionTen a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 20px;
+    transition: 0.5s;
+}
+.sectionTen a:hover{
+    background-color: var(--transparent-color);
+    color: black;
+    padding-left: 30px;
+}
+.sectionEleven{
+   padding-top: 100px;
+   padding-bottom: 100px;
+   position: relative;
+   background-image: url(../imgs/subscribe.jpg);
+   background-size: cover;
+} 
+.sectionEleven .container{
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   display: flex;
+   align-items: center;
+}
+.sectionEleven .container form{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+}
+.sectionEleven .container form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    color: white;
+}
+.sectionEleven .container form input{
+    width: calc(100% - 130px);
+    background: none;
+    border: 1px solid white;
+    padding: 20px 20px 20px 60px;
+    border-right: none;
+    caret-color: var(--main-color);
+    outline: none;
+} 
+.sectionEleven .container form button{
+    border-left: none;
+    padding: 20px;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    width: 130px;
+}
+.sectionEleven .container p{
+    position: relative;
+    z-index: 2;
+    color: white;
+    line-height: 2;
+    margin-left: 50px;
+}
+.sectionTwelve{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sectionTwelve .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.sectionTwelve .container .content{
+    display: flex;
+    justify-content: space-between;
+}
+.sectionTwelve .container .content form{
+    flex-basis: 60%;
+}
+.sectionTwelve .container .content form .one{
+    padding: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+} 
+.sectionTwelve .container .content form .two{
+    padding: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+} 
+.sectionTwelve .container .content form .three{
+    height: 200px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.sectionTwelve .container .content button{
+    display: block;
+    margin-left: auto;
+    padding: 20px 25px;
+    border: none;
+    background-color: var(--main-color);
+    transition: 0.3s;
+    color: white; 
+}
+.sectionTwelve .container .content button:hover{
+  background-color: var(--transparent-color);
+  color: black;
+  padding-left: 30px;
+  border-radius: 10px;
+}
+.sectionTwelve .container .content .details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 30%;
+    margin-top: 80px;
+}
+.sectionTwelve .container .content .details h2{
+    font-weight: 400;
+    font-size: 20px;
+}
+.sectionTwelve .container .content .details span{ 
+    color: var(--secondary-color);
+}
+.sectionTwelve .container .content .details address{
+    color: var(--secondary-color);
+    line-height: 2;
+}
+footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url(../imgs/subscribe.jpg);
+    position: relative;
+    background-size: cover;
+}
+footer .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+footer .container img{
+    position: relative;
+}
+footer .container .social{
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+footer .container .social h2{
+    font-size: 25px;
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    width: fit-content;
+    padding: 20px;
+}
+footer .container .social ul{
+    margin-top: 30px;
+    text-align: center;
+}
+footer .container .social ul i{
+    padding: 10px;
+    transition: 0.5s;
+}
+footer .container .social ul i:hover{
+   color: var(--main-color);
+   padding-left: 20px;
+}
+footer .container p{
+    position: relative;
+    color: white;   
+}
+footer .container span{
+    color: var(--main-color);
+}
+footer .name{
+    transition: 0.5s;
+}
+footer a{
+    color: white;
+    transition: .5s;
+    text-decoration: none;
+    position: relative;
+}
+footer .name:hover{
+    padding-left: 20px;
+}
+footer a:hover{
+    color: var(--main-color);
+}
+@media(max-width: 767px){
+    .sectionTwelve .container .content{
+        flex-direction: column-reverse;
+    }
+    .sectionTwelve .container .content .details {
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .sectionTwelve .container .content .details address {
+        text-align: center;
+    }
+}
+@media(max-width: 991px){
+    .sectionEleven .container{
+        flex-direction: column;
+    }
+    .sectionEleven .container p{
+        margin: 15px 0;
+        font-size: 15px;
+    }
+}
+@media(min-width: 992px){
+    .sectionEight .container .left ,
+    .sectionEight .container .right{
+        flex-basis: 45%;
+    }
+}
+@media(max-width: 991px){
+    .sectionEight .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sectionEight .container .left .nickName{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+}
+@media(max-width: 767px){
+    .sectionSeven .container .box{
+        flex-basis:100%;
+    }
+}
+@media(min-width: 768px){
+    .sectionSeven .container .box{
+        flex-basis:50%;
+    }
+}
+@media(min-width: 992px){
+    .sectionSeven .container .box{
+        flex-basis:25%;
+    }
+}
+@media(min-width:1199px){
+    .sectionFour .images .box{
+        flex-basis: 25%;
+    }
+}
+@media(min-width: 768px){
+    header .container nav .toggle-menu{
+        display: none;
+    }
+    .sectionFour .images .box{
+        flex-basis: 50%;
+    }
+}
+@media(max-width: 767px){
+    header .container nav ul{
+        display: none;
+    }
+    header .container nav .toggle-menu:hover + ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    header .container nav .toggle-menu + ul li a{
+        padding: 10px;
+        margin-left: 20px;
+    }
+    .sectionOne .text{
+        width: 100%;
+       padding: 30px;
+       margin-top: 50px;
+    }   
+    .sectionOne i{
+        display: none;
+    }
+    .sectionOne .text .content h1{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    .sectionOne .text .content p{
+        font-size: 15px;
+        line-height: 2;
+    }
+    .Services{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .Services .box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sectionThree .image{
+        display: none;
+    }
+    .sectionThree .text h2{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .sectionThree .text h2:hover{
+       color: var(--secondary-color);
+    }
+    .sectionFive .text h3{
+        font-size: 15px;
+    }
+    .sectionSix .image img{
+        bottom: -60px;
+    }
+}
